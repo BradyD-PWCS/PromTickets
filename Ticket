@@ -1,0 +1,75 @@
+package promTickets;
+
+public class Ticket {
+	public String code = "";
+	public String cost = "";
+	public String name = "";
+	public String year = "";
+	public String ticketType = "";
+	public Ticket(String N, String Y, String tt) {
+		name = N;
+		year = Y;
+		ticketType = tt;
+		
+	}
+	public void purchaseTicket() {
+		if (year.toLowerCase().equals("freshman")) {
+			if (ticketType.toLowerCase().equals("solo")) {
+				cost = "65.00";
+			}
+			if (ticketType.toLowerCase().equals("couple")) {
+				cost = "98.00";
+			}
+			if (ticketType.toLowerCase().equals("group")) {
+				cost = "163.00";
+			}
+		}
+		if (year.toLowerCase().equals("sophomore")) {
+			if (ticketType.toLowerCase().equals("solo")) {
+				cost = "55.00";
+			}
+			if (ticketType.toLowerCase().equals("couple")) {
+				cost = "83.00";
+			}
+			if (ticketType.toLowerCase().equals("group")) {
+				cost = "138.00";
+			}
+		}
+		if (year.toLowerCase().equals("junior")) {
+			if (ticketType.toLowerCase().equals("solo")) {
+				cost = "45.00";
+			}
+			if (ticketType.toLowerCase().equals("couple")) {
+				cost = "68.00";
+			}
+			if (ticketType.toLowerCase().equals("group")) {
+				cost = "113.00";
+				}
+		}
+		if (year.toLowerCase().equals("senior")) {
+				System.out.println("1");
+			if (ticketType.toLowerCase().equals("solo")) {
+				cost = "40.00";
+			}
+			if (ticketType.toLowerCase().equals("couple")) {
+				cost = "60.00";
+			}
+			if (ticketType.toLowerCase().equals("group")) {
+				cost = "100.00";
+				}
+			}
+	}
+	
+	public void purchaseInfo() {
+		int count = 0;
+		int random = 0;
+		String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		while(count<6) {
+			random = (int) (Math.random()*characters.length());
+			code += characters.substring(random, random+1);
+			count ++;
+		}
+		System.out.println(name + " is a " + year + ". They bought a " + ticketType + " ticket, costing " + cost + " dollars.");
+		System.out.println("Their conformation code is " + code);
+	}
+}
