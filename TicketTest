@@ -1,0 +1,20 @@
+package promTickets;
+
+import java.util.Scanner;
+
+public class TicketTest {
+	
+	public static void main(String[] args) {
+		Scanner keys = new Scanner(System.in);
+		System.out.println("Please type your name in the format of (FirstName LastName)");
+		String Name = keys.nextLine();
+		System.out.println("Please type what class you are in (Freshman/Sophomore/Junior/Senior)");
+		String year = keys.nextLine();
+		System.out.println("Please type what type the type of ticket you are buying (Solo/Couple/Group)");
+		String type = keys.nextLine();
+		Ticket buyer = new Ticket(Name, year, type);
+		buyer.purchaseTicket();
+		buyer.purchaseInfo();
+	}
+
+}
